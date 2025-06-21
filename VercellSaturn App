@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Saturn Life Mastery System - Transform Your Reality">
+    <title>Saturn γ Tracker</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+```
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        background: #000;
+        color: #fff;
+        min-height: 100vh;
+    }
+    
+    /* Header Styles */
+    .header {
+        background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+        padding: 30px 20px;
+        text-align: center;
+        border-bottom: 2px solid #FFD700;
+    }
+    
+    .logo {
+        font-size: 60px;
+        margin-bottom: 10px;
+        animation: glow 2s ease-in-out infinite;
+    }
+    
+    @keyframes glow {
+        0%, 100% { filter: drop-shadow(0 0 10px #FFD700); }
+        50% { filter: drop-shadow(0 0 20px #FFD700); }
+    }
+    
+    h1 {
+        color: #FFD700;
+        font-size: 2.5em;
+        margin-bottom: 10px;
+    }
+    
+    .subtitle {
+        color: #888;
+        font-size: 1.1em;
+    }
+    
+    /* Container */
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    
+    /* Stats Grid */
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin: 30px 0;
+    }
+    
+    .stat-card {
+        background: #1a1a1a;
+        border: 2px solid #333;
+        border-radius: 15px;
+        padding: 30px;
+        text-align: center;
+        transition: all 0.3s;
+        cursor: pointer;
+    }
+    
+    .stat-card:hover {
+        transform: translateY(-5px);
+        border-color: #FFD700;
+        box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+    }
+    
+    .stat-value {
+        font-size: 48px;
+        font-weight: bold;
+        color: #FFD700;
+        margin-bottom: 10px;
+    }
+    
+    .stat-label {
+        color: #888;
+        text-transform: uppercase;
+        font-size: 14px;
+        letter-spacing: 2px;
+    }
+    
+    /* Main Grid */
+    .main-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 20px;
+        margin-top: 30px;
+    }
+    
+    .card {
+        background: #1a1a1a;
+        border: 2px solid #333;
+        border-radius: 20px;
+        padding: 30px;
+        transition: all 0.3s;
+    }
+    
+    .card:hover {
+        border-color: #FFD700;
+    }
+    
+    .card h2 {
+        color: #FFD700;
+        margin-bottom: 20px;
+        font-size: 1.5em;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    /* Buttons */
+    .btn {
+        background: linear-gradient(135deg, #FFD700, #FFA500);
+        color: #000;
+        border: none;
+        padding: 15px 30px;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        width: 100%;
+        margin: 10px 0;
+        transition: all 0.3s;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    
+    .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(255, 215, 0, 0.4);
+    }
+    
+    .btn:active {
+        transform: scale(0.98);
+    }
+    
+    /* Chakra System */
+    .chakra-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+        margin: 25px 0;
+    }
+    
+    .chakra {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 35px;
+        cursor: pointer;
+        border: 3px solid #333;
+        background: rgba(255, 215, 0, 0.05);
+        transition: all 0.3s;
+    }
+    
+    .chakra:hover {
+        transform: scale(1.1) rotate(10deg);
+    }
+    
+    .chakra.active {
+        transform: scale(1.2);
+        border-color: #FFD700;
+        background: rgba(255, 215, 0, 0.2);
+        box-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
+        animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+        0% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.6); }
+        70% { box-shadow: 0 0 0 20px rgba(255, 215, 0, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0); }
+    }
+    
+    /* Progress Bar */
+    .progress-container {
+        background: #333;
+        border-radius: 15px;
+        overflow: hidden;
+        margin: 20px 0;
+        height: 40px;
+    }
+    
+    .progress-bar {
+        height: 100%;
+        background: linear-gradient(90deg, #FFD700, #FFA500, #FFD700);
+        background-size: 200% 100%;
+        animation: shimmer 3s linear infinite;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #000;
+        font-weight: bold;
+        transition: width 1s ease;
+    }
+    
+    @keyframes shimmer {
+        0% { background-position: -200% 0; }
+        100% { background-position: 200% 0; }
+    }
+    
+    /* Timer Display */
+    .timer-display {
+        font-size: 64px;
+        font-weight: bold;
+        color: #FFD700;
+        text-align: center;
+        margin: 30px 0;
+        font-family: 'SF Mono', 'Monaco', monospace;
+        text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    }
+    
+    /* Task List */
+    .task-list {
+        list-style: none;
+    }
+    
+    .task {
+        background: rgba(255, 215, 0, 0.05);
+        border: 2px solid #333;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 15px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+    
+    .task:hover {
+        border-color: #FFD700;
+        transform: translateX(10px);
+        background: rgba(255, 215, 0, 0.1);
+    }
+    
+    .task.completed {
+        opacity: 0.5;
+        text-decoration: line-through;
+        background: rgba(0, 255, 0, 0.1);
+        border-color: #0F0;
+    }
+    
+    /* Trading Terminal */
+    .terminal {
+        background: #000;
+        border: 2px solid #0F0;
+        border-radius: 10px;
+        padding: 20px;
+        font-family: 'Courier New', monospace;
+        font-size: 14px;
+        height: 350px;
+        overflow-y: auto;
+        margin: 20px 0;
+        box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+    }
+    
+    .terminal-line {
+        margin: 8px 0;
+        opacity: 0;
+        animation: fadeIn 0.5s forwards;
+    }
+    
+    @keyframes fadeIn {
+        to { opacity: 1; }
+    }
+    
+    .profit { color: #0F0; font-weight: bold; }
+    .loss { color: #F00; font-weight: bold; }
+    .neutral { color: #FFD700; }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+        h1 { font-size: 1.8em; }
+        .main-grid { grid-template-columns: 1fr; }
+        .stats-grid { grid-template-columns: repeat(2, 1fr); }
+        .chakra-grid { grid-template-columns: repeat(4, 1fr); }
+        .chakra { width: 60px; height: 60px; font-size: 28px; }
+        .timer-display { font-size: 48px; }
+    }
+    
+    /* Floating Action Button */
+    .fab {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 70px;
+        height: 70px;
+        background: linear-gradient(135deg, #FFD700, #FFA500);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 36px;
+        color: #000;
+        cursor: pointer;
+        box-shadow: 0 10px 30px rgba(255, 215, 0, 0.5);
+        transition: all 0.3s;
+        z-index: 1000;
+    }
+    
+    .fab:hover {
+        transform: scale(1.1) rotate(180deg);
+    }
+    
+    /* Loading Animation */
+    .loading {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        border: 4px solid #333;
+        border-radius: 50%;
+        border-top-color: #FFD700;
+        animation: spin 1s ease-in-out infinite;
+    }
+    
+    @keyframes spin {
+        to { transform: rotate(360deg); }
+    }
+</style>
+```
+
+</head>
+<body>
+    <div class="header">
+        <div class="logo">♄</div>
+        <h1>Saturn γ Life Mastery System</h1>
+        <p class="subtitle">Transform Your Reality • Master Your Destiny</p>
+    </div>
+
+```
+<div class="container">
+    <!-- Stats Overview -->
+    <div class="stats-grid">
+        <div class="stat-card" onclick="updateStat(this)">
+            <div class="stat-value" id="dailyProgress">0%</div>
+            <div class="stat-label">Daily Progress</div>
+        </div>
+        <div class="stat-card" onclick="updateStat(this)">
+            <div class="stat-value" id="chakrasActive">0/8</div>
+            <div class="stat-label">Chakras Active</div>
+        </div>
+        <div class="stat-card" onclick="updateStat(this)">
+            <div class="stat-value" id="fastingHours">0h</div>
+            <div class="stat-label">Fasting Time</div>
+        </div>
+        <div class="stat-card" onclick="updateStat(this)">
+            <div class="stat-value" id="tradingProfit">$0</div>
+            <div class="stat-label">Trading Profit</div>
+        </div>
+    </div>
+    
+    <!-- Main Content Grid -->
+    <div class="main-grid">
+        <!-- Spiritual Practice -->
+        <div class="card">
+            <h2><span>🌟</span> Spiritual Practice</h2>
+            <div class="chakra-grid">
+                <div class="chakra" onclick="toggleChakra(this)" title="Root Chakra">🔴</div>
+                <div class="chakra" onclick="toggleChakra(this)" title="Sacral Chakra">🟠</div>
+                <div class="chakra" onclick="toggleChakra(this)" title="Solar Plexus">🟡</div>
+                <div class="chakra" onclick="toggleChakra(this)" title="Heart Chakra">💚</div>
+                <div class="chakra" onclick="toggleChakra(this)" title="Throat Chakra">🔵</div>
+                <div class="chakra" onclick="toggleChakra(this)" title="Third Eye">🟣</div>
+                <div class="chakra" onclick="toggleChakra(this)" title="Crown Chakra">⚪</div>
+                <div class="chakra" onclick="toggleChakra(this)" title="Saturn Center">♄</div>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar" id="spiritualProgress" style="width: 0%">0%</div>
+            </div>
+            <button class="btn" onclick="startMeditation()">🧘 Begin Meditation</button>
+            <button class="btn" onclick="showMantra()">📿 Saturn Mantra</button>
+        </div>
+        
+        <!-- Daily Schedule -->
+        <div class="card">
+            <h2><span>⏰</span> Daily Schedule</h2>
+            <div class="timer-display" id="timer">00:00:00</div>
+            <ul class="task-list" id="taskList">
+                <li class="task" onclick="toggleTask(this)">
+                    <span>4:30 AM - Rise & Cold Shower</span>
+                    <span>🌅</span>
+                </li>
+                <li class="task" onclick="toggleTask(this)">
+                    <span>5:00 AM - Meditation & Chakras</span>
+                    <span>🧘</span>
+                </li>
+                <li class="task" onclick="toggleTask(this)">
+                    <span>6:00 AM - Movement Practice</span>
+                    <span>🏃</span>
+                </li>
+                <li class="task" onclick="toggleTask(this)">
+                    <span>8:00 AM - Deep Work Block</span>
+                    <span>💻</span>
+                </li>
+                <li class="task" onclick="toggleTask(this)">
+                    <span>12:00 PM - Physical Training</span>
+                    <span>💪</span>
+                </li>
+                <li class="task" onclick="toggleTask(this)">
+                    <span>6:00 PM - Evening Reflection</span>
+                    <span>🌙</span>
+                </li>
+            </ul>
+            <button class="btn" onclick="resetDay()">🔄 Reset Daily Tasks</button>
+        </div>
+        
+        <!-- Trading Terminal -->
+        <div class="card">
+            <h2><span>💹</span> Solana Trading Bot</h2>
+            <div class="terminal" id="terminal">
+                <div class="terminal-line neutral">SOL-SNIPER-BOT v3.0</div>
+                <div class="terminal-line neutral">================================</div>
+                <div class="terminal-line">Initializing quantum trading algorithms...</div>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                <button class="btn" onclick="toggleBot()">🤖 Toggle Bot</button>
+                <button class="btn" onclick="logTrade()">➕ Log Trade</button>
+            </div>
+        </div>
+        
+        <!-- Health Optimization -->
+        <div class="card">
+            <h2><span>🧬</span> Health Optimization</h2>
+            <div style="text-align: center;">
+                <p style="color: #888; margin-bottom: 10px;">FASTING TIMER</p>
+                <div class="timer-display" id="fastingTimer">00:00:00</div>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 20px 0;">
+                <div style="text-align: center; padding: 15px; background: rgba(255,215,0,0.1); border-radius: 10px;">
+                    <div style="font-size: 24px; color: #FFD700; font-weight: bold;">92</div>
+                    <div style="font-size: 12px; color: #888;">HRV</div>
+                </div>
+                <div style="text-align: center; padding: 15px; background: rgba(255,215,0,0.1); border-radius: 10px;">
+                    <div style="font-size: 24px; color: #FFD700; font-weight: bold;">7.5h</div>
+                    <div style="font-size: 12px; color: #888;">SLEEP</div>
+                </div>
+                <div style="text-align: center; padding: 15px; background: rgba(255,215,0,0.1); border-radius: 10px;">
+                    <div style="font-size: 24px; color: #FFD700; font-weight: bold;">85%</div>
+                    <div style="font-size: 12px; color: #888;">RECOVERY</div>
+                </div>
+            </div>
+            <button class="btn" onclick="toggleFasting()">⏱️ Start/Stop Fasting</button>
+            <button class="btn" onclick="showBiohacks()">💊 Biohacking Stack</button>
+        </div>
+    </div>
+</div>
+
+<!-- Floating Action Button -->
+<div class="fab" onclick="quickAction()">+</div>
+
+<script>
+    // Global Variables
+    let timerInterval;
+    let seconds = 0;
+    let botActive = false;
+    let botInterval;
+    let fastingInterval;
+    let fastingSeconds = 0;
+    let isFasting = false;
+    
+    // Initialize on load
+    window.addEventListener('load', () => {
+        loadData();
+        startMainTimer();
+        updateAllStats();
+        addTerminalLine('System initialized. Welcome, Saturn Master.', 'neutral');
+    });
+    
+    // Main Timer
+    function startMainTimer() {
+        timerInterval = setInterval(() => {
+            seconds++;
+            updateTimerDisplay('timer', seconds);
+        }, 1000);
+    }
+    
+    function updateTimerDisplay(elementId, totalSeconds) {
+        const hours = Math.floor(totalSeconds / 3600);
+        const minutes = Math.floor((totalSeconds % 3600) / 60);
+        const secs = totalSeconds % 60;
+        document.getElementById(elementId).textContent = 
+            `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+    }
+    
+    // Chakra System
+    function toggleChakra(element) {
+        element.classList.toggle('active');
+        updateChakraProgress();
+        saveData();
+    }
+    
+    function updateChakraProgress() {
+        const total = document.querySelectorAll('.chakra').length;
+        const active = document.querySelectorAll('.chakra.active').length;
+        const percentage = Math.round((active / total) * 100);
+        
+        document.getElementById('chakrasActive').textContent = `${active}/${total}`;
+        document.getElementById('spiritualProgress').style.width = percentage + '%';
+        document.getElementById('spiritualProgress').textContent = percentage + '%';
+    }
+    
+    // Task Management
+    function toggleTask(element) {
+        element.classList.toggle('completed');
+        updateDailyProgress();
+        saveData();
+    }
+    
+    function updateDailyProgress() {
+        const total = document.querySelectorAll('.task').length;
+        const completed = document.querySelectorAll('.task.completed').length;
+        const percentage = Math.round((completed / total) * 100);
+        
+        document.getElementById('dailyProgress').textContent = percentage + '%';
+    }
+    
+    function resetDay() {
+        if (confirm('Reset all daily tasks?')) {
+            document.querySelectorAll('.task').forEach(task => {
+                task.classList.remove('completed');
+            });
+            updateDailyProgress();
+            saveData();
+        }
+    }
+    
+    // Trading Bot
+    function toggleBot() {
+        botActive = !botActive;
+        
+        if (botActive) {
+            addTerminalLine('Quantum trading bot activated...', 'profit');
+            addTerminalLine('Scanning Solana blockchain for opportunities...', 'neutral');
+            botInterval = setInterval(simulateTrade, 3000);
+        } else {
+            addTerminalLine('Bot deactivated. Standing by.', 'loss');
+            clearInterval(botInterval);
+        }
+    }
+    
+    function simulateTrade() {
+        const trades = [
+            { msg: 'New liquidity pool detected on Raydium...', type: 'neutral' },
+            { msg: '[BUY] Token: GAMMA | Amount: 10 SOL | Price: 0.0042', type: 'profit' },
+            { msg: '[SELL] GAMMA | Profit: +6.35 SOL (+127%)', type: 'profit' },
+            { msg: '[WARNING] Rugpull detected - Avoiding token: SCAM', type: 'loss' },
+            { msg: 'Market scan complete. 3 opportunities identified.', type: 'neutral' },
+            { msg: '[BUY] Token: SATURN | Amount: 5 SOL | Price: 0.015', type: 'profit' }
+        ];
+        
+        const trade = trades[Math.floor(Math.random() * trades.length)];
+        addTerminalLine(trade.msg, trade.type);
+        
+        if (trade.msg.includes('Profit')) {
+            updateProfit(Math.random() * 100);
+        }
+    }
+    
+    function addTerminalLine(text, type = '') {
+        const terminal = document.getElementById('terminal');
+        const line = document.createElement('div');
+        line.className = `terminal-line ${type}`;
+        line.textContent = `[${new Date().toLocaleTimeString()}] ${text}`;
+        terminal.appendChild(line);
+        terminal.scrollTop = terminal.scrollHeight;
+        
+        // Keep max 20 lines
+        while (terminal.children.length > 20) {
+            terminal.removeChild(terminal.children[2]);
+        }
+    }
+    
+    function logTrade() {
+        const amount = prompt('Enter trade profit/loss (e.g., +50 or -20):');
+        if (amount) {
+            const value = parseFloat(amount);
+            addTerminalLine(`Manual trade logged: ${amount} SOL`, value > 0 ? 'profit' : 'loss');
+            updateProfit(value * 134); // Convert SOL to USD
+        }
+    }
+    
+    function updateProfit(amount) {
+        const current = parseFloat(document.getElementById('tradingProfit').textContent.replace('$', ''));
+        const newTotal = current + amount;
+        document.getElementById('tradingProfit').textContent = '$' + newTotal.toFixed(2);
+        saveData();
+    }
+    
+    // Health Functions
+    function toggleFasting() {
+        isFasting = !isFasting;
+        
+        if (isFasting) {
+            fastingInterval = setInterval(() => {
+                fastingSeconds++;
+                updateTimerDisplay('fastingTimer', fastingSeconds);
+                document.getElementById('fastingHours').textContent = 
+                    (fastingSeconds / 3600).toFixed(1) + 'h';
+            }, 1000);
+            alert('Fasting timer started!\n\nTarget: 18 hours\nAutophagy begins at 16 hours');
+        } else {
+            clearInterval(fastingInterval);
+            if (fastingSeconds > 0) {
+                alert(`Fasting completed!\n\nTotal time: ${(fastingSeconds / 3600).toFixed(1)} hours\n\nGreat job!`);
+                fastingSeconds = 0;
+                updateTimerDisplay('fastingTimer', 0);
+            }
+        }
+        saveData();
+    }
+    
+    function showBiohacks() {
+        alert(`🧬 Daily Biohacking Protocol:\n\n☀️ MORNING:\n• Magnesium Glycinate 400mg\n• Vitamin D3/K2 5000IU\n• Lion's Mane 1000mg\n• NAD+ Booster\n\n💪 PRE-WORKOUT:\n• Creatine 5g\n• Beta-Alanine 3g\n• L-Citrulline 6g\n\n🌙 EVENING:\n• Ashwagandha 600mg\n• Glycine 3g\n• Magnesium L-Threonate`);
+    }
+    
+    // Spiritual Functions
+    function startMeditation() {
+        const duration = prompt('Meditation duration in minutes:', '20');
+        if (duration) {
+            alert(`Starting ${duration}-minute meditation...\n\n🧘 Find a quiet space\n🌬️ Focus on your breath\n🔮 Let thoughts pass like clouds\n\nTimer will alert you when complete.`);
+            setTimeout(() => {
+                alert('🔔 Meditation complete!\n\nNamaste 🙏');
+            }, duration * 60000);
+        }
+    }
+    
+    function showMantra() {
+        alert('🪐 Saturn Mantra:\n\n"Om Sham Shanicharaya Namah"\n\nRepeat 108 times\n\nMeaning: I bow to Saturn, the teacher of patience and wisdom');
+    }
+    
+    // Quick Action
+    function quickAction() {
+        const actions = [
+            '💧 Log water intake',
+            '📝 Journal entry',
+            '📸 Progress photo',
+            '🙏 Gratitude practice',
+            '📊 Check crypto prices',
+            '🎯 Set new goal'
+        ];
+        
+        const selected = prompt(`Quick Actions:\n\n${actions.map((a, i) => `${i + 1}. ${a}`).join('\n')}\n\nEnter number:`);
+        
+        if (selected && actions[parseInt(selected) - 1]) {
+            alert(`✅ ${actions[parseInt(selected) - 1]} completed!`);
+        }
+    }
+    
+    // Update Stats Animation
+    function updateStat(element) {
+        element.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            element.style.transform = 'scale(1)';
+        }, 100);
+    }
+    
+    function updateAllStats() {
+        updateChakraProgress();
+        updateDailyProgress();
+    }
+    
+    // Save/Load Data
+    function saveData() {
+        const data = {
+            chakras: Array.from(document.querySelectorAll('.chakra')).map(c => c.classList.contains('active')),
+            tasks: Array.from(document.querySelectorAll('.task')).map(t => t.classList.contains('completed')),
+            profit: document.getElementById('tradingProfit').textContent,
+            fastingSeconds: fastingSeconds,
+            savedDate: new Date().toDateString()
+        };
+        
+        localStorage.setItem('saturnTracker', JSON.stringify(data));
+    }
+    
+    function loadData() {
+        const saved = localStorage.getItem('saturnTracker');
+        if (saved) {
+            const data = JSON.parse(saved);
+            
+            // Check if new day
+            if (data.savedDate !== new Date().toDateString()) {
+                resetDay();
+                return;
+            }
+            
+            // Restore chakras
+            document.querySelectorAll('.chakra').forEach((chakra, i) => {
+                if (data.chakras && data.chakras[i]) {
+                    chakra.classList.add('active');
+                }
+            });
+            
+            // Restore tasks
+            document.querySelectorAll('.task').forEach((task, i) => {
+                if (data.tasks && data.tasks[i]) {
+                    task.classList.add('completed');
+                }
+            });
+            
+            // Restore profit
+            if (data.profit) {
+                document.getElementById('tradingProfit').textContent = data.profit;
+            }
+            
+            // Restore fasting
+            if (data.fastingSeconds) {
+                fastingSeconds = data.fastingSeconds;
+                updateTimerDisplay('fastingTimer', fastingSeconds);
+                document.getElementById('fastingHours').textContent = 
+                    (fastingSeconds / 3600).toFixed(1) + 'h';
+            }
+            
+            updateAllStats();
+        }
+    }
+    
+    // Auto-save every 30 seconds
+    setInterval(saveData, 30000);
+    
+    // Add keyboard shortcuts
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'm' && e.ctrlKey) startMeditation();
+        if (e.key === 't' && e.ctrlKey) toggleBot();
+        if (e.key === 'f' && e.ctrlKey) toggleFasting();
+    });
+</script>
+```
+
+</body>
+</html>
